@@ -1,0 +1,137 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Equipment {
+  MASK
+  SNORKEL
+  FINS
+  WETSUIT
+  DIVE_LIGHTS
+  DIVING_BOOTS
+  DIVING_GLOVES
+  FLASHLIGHT
+  WEIGHT_BELT
+}
+
+enum HealthStatus {
+  EXCELLENT
+  GOOD
+  AVERAGE
+  TIRED
+  INJURED
+  SICK
+  RECOVERING
+  EXHAUSTED
+}
+
+enum SpotDanger {
+  STRONG_CURRENTS
+  HIGH_WAVES
+  LOW_VISIBILITY
+  EXTREME_TEMPERATURE
+  DEEP_WATER
+  SHARP_ROCKS_CORALS
+  CAVES_AND_BLUE_HOLES
+  VENOMOUS_FISH
+  SHARKS
+  BOAT_TRAFFIC
+  ACCESSIBILITY
+}
+
+model User {
+  id          String   @id @default(uuid())
+  email       String   @unique
+  password    String
+  username    String   @unique
+  firstName   String
+  lastName    String
+  birthDate   DateTime
+  avatar      String?
+  equipment   String[] // Stocké comme JSON des WaterEquipmentEnum
+  displayName String?
+  status      String // HealthStatusEnum
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  spots        Spot[]        @relation("UserSpots")
+  favorites    Spot[]        @relation("UserFavorites")
+  friends      User[]        @relation("UserFriends")
+  friendOf     User[]        @relation("UserFriends")
+  notes        Note[]
+  pockets      Pocket[]
+  explorations Exploration[]
+
+  // Géolocalisation
+  country   String?
+  city      String?
+  region    String?
+  street    String?
+  number    String?
+  latitude  Float?
+  longitude Float?
+}
+
+model Spot {
+  id          String       @id @default(uuid())
+  name        String
+  description String
+  photos      String[]
+  dangers     SpotDanger[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  // Relations
+  creator     User   @relation("UserSpots", fields: [creatorId], references: [id])
+  creatorId   String
+  favoritedBy User[] @relation("UserFavorites")
+
+  // Géolocalisation
+  country     String
+  city        String
+  region      String
+  street      String
+  number      String
+  latitude    Float
+  longitude   Float
+  Exploration Exploration[]
+}
+
+model Note {
+  id     String   @id @default(uuid())
+  note   Int
+  date   DateTime @default(now())
+  user   User     @relation(fields: [userId], references: [id])
+  userId String
+}
+
+model Pocket {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  createdAt DateTime @default(now())
+}
+
+model Exploration {
+  id     String   @id @default(uuid())
+  user   User     @relation(fields: [userId], references: [id])
+  userId String
+  spot   Spot     @relation(fields: [spotId], references: [id])
+  spotId String
+  date   DateTime @default(now())
+
+  @@unique([userId, spotId, date])
+}
