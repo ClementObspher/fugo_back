@@ -149,11 +149,6 @@ exports.Prisma.SpotScalarFieldEnum = {
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   creatorId: 'creatorId',
-  country: 'country',
-  city: 'city',
-  region: 'region',
-  street: 'street',
-  number: 'number',
   latitude: 'latitude',
   longitude: 'longitude'
 };

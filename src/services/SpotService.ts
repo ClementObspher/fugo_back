@@ -63,4 +63,12 @@ export class SpotService {
 			data: { photos: { push: imageUrl } },
 		})
 	}
+
+	async getUserSpots(userId: string): Promise<Spot[]> {
+		return prisma.spot.findMany({
+			where: {
+				creatorId: userId,
+			},
+		})
+	}
 }

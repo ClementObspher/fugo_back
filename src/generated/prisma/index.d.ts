@@ -2916,11 +2916,6 @@ export namespace Prisma {
     createdAt: Date | null
     updatedAt: Date | null
     creatorId: string | null
-    country: string | null
-    city: string | null
-    region: string | null
-    street: string | null
-    number: string | null
     latitude: number | null
     longitude: number | null
   }
@@ -2932,11 +2927,6 @@ export namespace Prisma {
     createdAt: Date | null
     updatedAt: Date | null
     creatorId: string | null
-    country: string | null
-    city: string | null
-    region: string | null
-    street: string | null
-    number: string | null
     latitude: number | null
     longitude: number | null
   }
@@ -2950,11 +2940,6 @@ export namespace Prisma {
     createdAt: number
     updatedAt: number
     creatorId: number
-    country: number
-    city: number
-    region: number
-    street: number
-    number: number
     latitude: number
     longitude: number
     _all: number
@@ -2978,11 +2963,6 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     creatorId?: true
-    country?: true
-    city?: true
-    region?: true
-    street?: true
-    number?: true
     latitude?: true
     longitude?: true
   }
@@ -2994,11 +2974,6 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     creatorId?: true
-    country?: true
-    city?: true
-    region?: true
-    street?: true
-    number?: true
     latitude?: true
     longitude?: true
   }
@@ -3012,11 +2987,6 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     creatorId?: true
-    country?: true
-    city?: true
-    region?: true
-    street?: true
-    number?: true
     latitude?: true
     longitude?: true
     _all?: true
@@ -3117,11 +3087,6 @@ export namespace Prisma {
     createdAt: Date
     updatedAt: Date
     creatorId: string
-    country: string
-    city: string
-    region: string
-    street: string
-    number: string
     latitude: number
     longitude: number
     _count: SpotCountAggregateOutputType | null
@@ -3154,11 +3119,6 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     creatorId?: boolean
-    country?: boolean
-    city?: boolean
-    region?: boolean
-    street?: boolean
-    number?: boolean
     latitude?: boolean
     longitude?: boolean
     creator?: boolean | UserDefaultArgs<ExtArgs>
@@ -3176,11 +3136,6 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     creatorId?: boolean
-    country?: boolean
-    city?: boolean
-    region?: boolean
-    street?: boolean
-    number?: boolean
     latitude?: boolean
     longitude?: boolean
     creator?: boolean | UserDefaultArgs<ExtArgs>
@@ -3195,11 +3150,6 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     creatorId?: boolean
-    country?: boolean
-    city?: boolean
-    region?: boolean
-    street?: boolean
-    number?: boolean
     latitude?: boolean
     longitude?: boolean
     creator?: boolean | UserDefaultArgs<ExtArgs>
@@ -3214,16 +3164,11 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     creatorId?: boolean
-    country?: boolean
-    city?: boolean
-    region?: boolean
-    street?: boolean
-    number?: boolean
     latitude?: boolean
     longitude?: boolean
   }
 
-  export type SpotOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "photos" | "dangers" | "createdAt" | "updatedAt" | "creatorId" | "country" | "city" | "region" | "street" | "number" | "latitude" | "longitude", ExtArgs["result"]["spot"]>
+  export type SpotOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "photos" | "dangers" | "createdAt" | "updatedAt" | "creatorId" | "latitude" | "longitude", ExtArgs["result"]["spot"]>
   export type SpotInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     creator?: boolean | UserDefaultArgs<ExtArgs>
     favoritedBy?: boolean | Spot$favoritedByArgs<ExtArgs>
@@ -3253,11 +3198,6 @@ export namespace Prisma {
       createdAt: Date
       updatedAt: Date
       creatorId: string
-      country: string
-      city: string
-      region: string
-      street: string
-      number: string
       latitude: number
       longitude: number
     }, ExtArgs["result"]["spot"]>
@@ -3694,11 +3634,6 @@ export namespace Prisma {
     readonly createdAt: FieldRef<"Spot", 'DateTime'>
     readonly updatedAt: FieldRef<"Spot", 'DateTime'>
     readonly creatorId: FieldRef<"Spot", 'String'>
-    readonly country: FieldRef<"Spot", 'String'>
-    readonly city: FieldRef<"Spot", 'String'>
-    readonly region: FieldRef<"Spot", 'String'>
-    readonly street: FieldRef<"Spot", 'String'>
-    readonly number: FieldRef<"Spot", 'String'>
     readonly latitude: FieldRef<"Spot", 'Float'>
     readonly longitude: FieldRef<"Spot", 'Float'>
   }
@@ -7376,11 +7311,6 @@ export namespace Prisma {
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     creatorId: 'creatorId',
-    country: 'country',
-    city: 'city',
-    region: 'region',
-    street: 'street',
-    number: 'number',
     latitude: 'latitude',
     longitude: 'longitude'
   };
@@ -7681,11 +7611,6 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Spot"> | Date | string
     updatedAt?: DateTimeFilter<"Spot"> | Date | string
     creatorId?: StringFilter<"Spot"> | string
-    country?: StringFilter<"Spot"> | string
-    city?: StringFilter<"Spot"> | string
-    region?: StringFilter<"Spot"> | string
-    street?: StringFilter<"Spot"> | string
-    number?: StringFilter<"Spot"> | string
     latitude?: FloatFilter<"Spot"> | number
     longitude?: FloatFilter<"Spot"> | number
     creator?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -7702,11 +7627,6 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     creatorId?: SortOrder
-    country?: SortOrder
-    city?: SortOrder
-    region?: SortOrder
-    street?: SortOrder
-    number?: SortOrder
     latitude?: SortOrder
     longitude?: SortOrder
     creator?: UserOrderByWithRelationInput
@@ -7726,11 +7646,6 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Spot"> | Date | string
     updatedAt?: DateTimeFilter<"Spot"> | Date | string
     creatorId?: StringFilter<"Spot"> | string
-    country?: StringFilter<"Spot"> | string
-    city?: StringFilter<"Spot"> | string
-    region?: StringFilter<"Spot"> | string
-    street?: StringFilter<"Spot"> | string
-    number?: StringFilter<"Spot"> | string
     latitude?: FloatFilter<"Spot"> | number
     longitude?: FloatFilter<"Spot"> | number
     creator?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -7747,11 +7662,6 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     creatorId?: SortOrder
-    country?: SortOrder
-    city?: SortOrder
-    region?: SortOrder
-    street?: SortOrder
-    number?: SortOrder
     latitude?: SortOrder
     longitude?: SortOrder
     _count?: SpotCountOrderByAggregateInput
@@ -7773,11 +7683,6 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"Spot"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Spot"> | Date | string
     creatorId?: StringWithAggregatesFilter<"Spot"> | string
-    country?: StringWithAggregatesFilter<"Spot"> | string
-    city?: StringWithAggregatesFilter<"Spot"> | string
-    region?: StringWithAggregatesFilter<"Spot"> | string
-    street?: StringWithAggregatesFilter<"Spot"> | string
-    number?: StringWithAggregatesFilter<"Spot"> | string
     latitude?: FloatWithAggregatesFilter<"Spot"> | number
     longitude?: FloatWithAggregatesFilter<"Spot"> | number
   }
@@ -8130,11 +8035,6 @@ export namespace Prisma {
     dangers?: SpotCreatedangersInput | $Enums.SpotDanger[]
     createdAt?: Date | string
     updatedAt?: Date | string
-    country: string
-    city: string
-    region: string
-    street: string
-    number: string
     latitude: number
     longitude: number
     creator: UserCreateNestedOneWithoutSpotsInput
@@ -8151,11 +8051,6 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     creatorId: string
-    country: string
-    city: string
-    region: string
-    street: string
-    number: string
     latitude: number
     longitude: number
     favoritedBy?: UserUncheckedCreateNestedManyWithoutFavoritesInput
@@ -8170,11 +8065,6 @@ export namespace Prisma {
     dangers?: SpotUpdatedangersInput | $Enums.SpotDanger[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
     creator?: UserUpdateOneRequiredWithoutSpotsNestedInput
@@ -8191,11 +8081,6 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creatorId?: StringFieldUpdateOperationsInput | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
     favoritedBy?: UserUncheckedUpdateManyWithoutFavoritesNestedInput
@@ -8211,11 +8096,6 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     creatorId: string
-    country: string
-    city: string
-    region: string
-    street: string
-    number: string
     latitude: number
     longitude: number
   }
@@ -8228,11 +8108,6 @@ export namespace Prisma {
     dangers?: SpotUpdatedangersInput | $Enums.SpotDanger[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
   }
@@ -8246,11 +8121,6 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creatorId?: StringFieldUpdateOperationsInput | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
   }
@@ -8682,11 +8552,6 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     creatorId?: SortOrder
-    country?: SortOrder
-    city?: SortOrder
-    region?: SortOrder
-    street?: SortOrder
-    number?: SortOrder
     latitude?: SortOrder
     longitude?: SortOrder
   }
@@ -8703,11 +8568,6 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     creatorId?: SortOrder
-    country?: SortOrder
-    city?: SortOrder
-    region?: SortOrder
-    street?: SortOrder
-    number?: SortOrder
     latitude?: SortOrder
     longitude?: SortOrder
   }
@@ -8719,11 +8579,6 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     creatorId?: SortOrder
-    country?: SortOrder
-    city?: SortOrder
-    region?: SortOrder
-    street?: SortOrder
-    number?: SortOrder
     latitude?: SortOrder
     longitude?: SortOrder
   }
@@ -9537,11 +9392,6 @@ export namespace Prisma {
     dangers?: SpotCreatedangersInput | $Enums.SpotDanger[]
     createdAt?: Date | string
     updatedAt?: Date | string
-    country: string
-    city: string
-    region: string
-    street: string
-    number: string
     latitude: number
     longitude: number
     favoritedBy?: UserCreateNestedManyWithoutFavoritesInput
@@ -9556,11 +9406,6 @@ export namespace Prisma {
     dangers?: SpotCreatedangersInput | $Enums.SpotDanger[]
     createdAt?: Date | string
     updatedAt?: Date | string
-    country: string
-    city: string
-    region: string
-    street: string
-    number: string
     latitude: number
     longitude: number
     favoritedBy?: UserUncheckedCreateNestedManyWithoutFavoritesInput
@@ -9585,11 +9430,6 @@ export namespace Prisma {
     dangers?: SpotCreatedangersInput | $Enums.SpotDanger[]
     createdAt?: Date | string
     updatedAt?: Date | string
-    country: string
-    city: string
-    region: string
-    street: string
-    number: string
     latitude: number
     longitude: number
     creator: UserCreateNestedOneWithoutSpotsInput
@@ -9605,11 +9445,6 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     creatorId: string
-    country: string
-    city: string
-    region: string
-    street: string
-    number: string
     latitude: number
     longitude: number
     Exploration?: ExplorationUncheckedCreateNestedManyWithoutSpotInput
@@ -9838,11 +9673,6 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Spot"> | Date | string
     updatedAt?: DateTimeFilter<"Spot"> | Date | string
     creatorId?: StringFilter<"Spot"> | string
-    country?: StringFilter<"Spot"> | string
-    city?: StringFilter<"Spot"> | string
-    region?: StringFilter<"Spot"> | string
-    street?: StringFilter<"Spot"> | string
-    number?: StringFilter<"Spot"> | string
     latitude?: FloatFilter<"Spot"> | number
     longitude?: FloatFilter<"Spot"> | number
   }
@@ -10582,11 +10412,6 @@ export namespace Prisma {
     dangers?: SpotCreatedangersInput | $Enums.SpotDanger[]
     createdAt?: Date | string
     updatedAt?: Date | string
-    country: string
-    city: string
-    region: string
-    street: string
-    number: string
     latitude: number
     longitude: number
     creator: UserCreateNestedOneWithoutSpotsInput
@@ -10602,11 +10427,6 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     creatorId: string
-    country: string
-    city: string
-    region: string
-    street: string
-    number: string
     latitude: number
     longitude: number
     favoritedBy?: UserUncheckedCreateNestedManyWithoutFavoritesInput
@@ -10705,11 +10525,6 @@ export namespace Prisma {
     dangers?: SpotUpdatedangersInput | $Enums.SpotDanger[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
     creator?: UserUpdateOneRequiredWithoutSpotsNestedInput
@@ -10725,11 +10540,6 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creatorId?: StringFieldUpdateOperationsInput | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
     favoritedBy?: UserUncheckedUpdateManyWithoutFavoritesNestedInput
@@ -10743,11 +10553,6 @@ export namespace Prisma {
     dangers?: SpotCreatedangersInput | $Enums.SpotDanger[]
     createdAt?: Date | string
     updatedAt?: Date | string
-    country: string
-    city: string
-    region: string
-    street: string
-    number: string
     latitude: number
     longitude: number
   }
@@ -10777,11 +10582,6 @@ export namespace Prisma {
     dangers?: SpotUpdatedangersInput | $Enums.SpotDanger[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
     favoritedBy?: UserUpdateManyWithoutFavoritesNestedInput
@@ -10796,11 +10596,6 @@ export namespace Prisma {
     dangers?: SpotUpdatedangersInput | $Enums.SpotDanger[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
     favoritedBy?: UserUncheckedUpdateManyWithoutFavoritesNestedInput
@@ -10815,11 +10610,6 @@ export namespace Prisma {
     dangers?: SpotUpdatedangersInput | $Enums.SpotDanger[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
   }
@@ -10832,11 +10622,6 @@ export namespace Prisma {
     dangers?: SpotUpdatedangersInput | $Enums.SpotDanger[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
     creator?: UserUpdateOneRequiredWithoutSpotsNestedInput
@@ -10852,11 +10637,6 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creatorId?: StringFieldUpdateOperationsInput | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
     Exploration?: ExplorationUncheckedUpdateManyWithoutSpotNestedInput
@@ -10871,11 +10651,6 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creatorId?: StringFieldUpdateOperationsInput | string
-    country?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    region?: StringFieldUpdateOperationsInput | string
-    street?: StringFieldUpdateOperationsInput | string
-    number?: StringFieldUpdateOperationsInput | string
     latitude?: FloatFieldUpdateOperationsInput | number
     longitude?: FloatFieldUpdateOperationsInput | number
   }

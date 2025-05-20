@@ -1,7 +1,8 @@
 {
   "name": "fugo_back",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "prisma:seed": "bun prisma/seed.ts"
   },
   "dependencies": {
     "@hono/swagger-ui": "^0.5.1",

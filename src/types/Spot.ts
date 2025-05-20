@@ -6,7 +6,10 @@ export interface Spot {
 	user_id: string
 	name: string
 	description: string
-	geolocation: Geolocation
+	geolocation: {
+		latitude: number
+		longitude: number
+	}
 	photos: string[]
 	dangers: SpotDangersEnum[]
 }

@@ -19,6 +19,7 @@ export class SpotController {
 		try {
 			const id = c.req.param("id")
 			const spot = await spotService.findById(id)
+			console.log(spot)
 
 			if (!spot) {
 				return c.json({ error: "Spot non trouvé" }, 404)
@@ -34,9 +35,10 @@ export class SpotController {
 		try {
 			const data = await c.req.json<Omit<Spot, "id" | "createdAt" | "updatedAt">>()
 			const spot = await spotService.create(data)
+			console.log(spot)
 			return c.json(spot, 201)
 		} catch (error) {
-			return c.json({ error: "Erreur lors de la création du spot" }, 500)
+			return c.json({ error }, 500)
 		}
 	}
 
@@ -81,11 +83,23 @@ export class SpotController {
 			}
 			const imageUrl = await uploadImage(file.buffer, file.originalname)
 
-			await spotService.addSpotPhoto(spotId, imageUrl)
+			const res = await spotService.addSpotPhoto(spotId, imageUrl)
+			console.log(res)
 
 			return c.json({ message: "Photo ajoutée", imageUrl })
 		} catch (error) {
+			console.log(error)
 			return c.json({ error: "Erreur lors de l'ajout de la photo" }, 500)
+		}
+	}
+
+	async getUserSpots(c: Context) {
+		try {
+			const userId = c.req.param("userId")
+			const spots = await spotService.getUserSpots(userId)
+			return c.json(spots)
+		} catch (error) {
+			return c.json({ error: "Erreur lors de la récupération des spots de l'utilisateur" }, 500)
 		}
 	}
 }

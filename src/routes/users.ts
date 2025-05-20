@@ -20,7 +20,7 @@ users.post("/:id/avatar", upload.single("avatar"), async (c) => {
 })
 
 // Met à jour un utilisateur
-users.put("/:id", (c) => userController.update(c))
+users.patch("/:id", (c) => userController.update(c))
 
 // Supprime un utilisateur
 users.delete("/:id", (c) => userController.delete(c))

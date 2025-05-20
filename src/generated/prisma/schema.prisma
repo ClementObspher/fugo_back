@@ -89,8 +89,8 @@ model Spot {
   id          String       @id @default(uuid())
   name        String
   description String
-  photos      String[]
-  dangers     SpotDanger[]
+  photos      String[]     @default([])
+  dangers     SpotDanger[] @default([])
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
 
@@ -100,11 +100,6 @@ model Spot {
   favoritedBy User[] @relation("UserFavorites")
 
   // Géolocalisation
-  country     String
-  city        String
-  region      String
-  street      String
-  number      String
   latitude    Float
   longitude   Float
   Exploration Exploration[]
